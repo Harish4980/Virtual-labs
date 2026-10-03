@@ -1,0 +1,38 @@
+{
+  "name": "virtual-labs",
+  "version": "1.0.0",
+  "description": "An interactive, multi-language virtual programming laboratory platform.",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "serve": "npx serve ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Harish4980/Virtual-labs.git"
+  },
+  "keywords": [
+    "virtual-labs",
+    "online-compiler",
+    "code-editor",
+    "python",
+    "javascript",
+    "c",
+    "cpp",
+    "java",
+    "dotnet",
+    "csharp",
+    "php",
+    "html",
+    "css",
+    "education",
+    "e-learning"
+  ],
+  "author": "Harish",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Harish4980/Virtual-labs/issues"
+  },
+  "homepage": "https://github.com/Harish4980/Virtual-labs#readme"
+}
