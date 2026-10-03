@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Labs</title>
+    <link rel="stylesheet" href="labs.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo"><i class="fa-solid fa-flask"></i>Virtual Labs</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="labs.html" class="active">Labs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><button class="toggle-btn" id="themeToggle"><i class="fas fa-moon"></i></button></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Choose Your Programming Lab</h1>
+        <p>Click a language to start coding instantly</p>
+    </header>
+
+    <!-- Language Cards -->
+    <section class="language-container">
+        <div class="lang-card" data-lang="c">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png">
+            <h3>C</h3>
+            <p>Powerful procedural language used for system programming and embedded systems.</p>
+        </div>
+        <div class="lang-card" data-lang="cpp">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg">
+            <h3>C++</h3>
+            <p>Extension of C with OOP features, popular for high-performance apps.</p>
+        </div>
+        <div class="lang-card" data-lang="html">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg">
+            <h3>HTML</h3>
+            <p>The standard markup language for creating web pages.</p>
+        </div>
+        <div class="lang-card" data-lang="php">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg">
+            <h3>PHP</h3>
+            <p>Server-side scripting language designed for dynamic web content.</p>
+        </div>
+        <div class="lang-card" data-lang="python">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg">
+            <h3>Python</h3>
+            <p>Readable, versatile language used in web dev, AI, and data science.</p>
+        </div>
+        <div class="lang-card" data-lang="java">
+            <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg">
+            <h3>Java</h3>
+            <p>Object-oriented language with cross-platform capabilities.</p>
+        </div>
+        <div class="lang-card" data-lang="dotnet">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/.NET_Core_Logo.svg">
+            <h3>.NET</h3>
+            <p>Cross-platform framework supporting multiple languages.</p>
+        </div>
+        <div class="lang-card" data-lang="js">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png">
+            <h3>JavaScript</h3>
+            <p>High-level language for interactive web development.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Virtual Labs | Made with <i class="fas fa-heart"></i> for learning</p>
+    </footer>
+
+    <script>
+        // Dark/Light Mode Toggle
+        const toggleBtn = document.getElementById("themeToggle");
+        toggleBtn.addEventListener("click", () => {
+            document.body.classList.toggle("dark");
+            toggleBtn.innerHTML = document.body.classList.contains("dark") 
+                ? '<i class="fas fa-sun"></i>' 
+                : '<i class="fas fa-moon"></i>';
+        });
+
+        // Redirect on Card Click
+        document.querySelectorAll(".lang-card").forEach(card => {
+            card.addEventListener("click", () => {
+                const lang = card.dataset.lang;
+                window.location.href = `editor.html?lang=${lang}`;
+            });
+        });
+    </script>
+</body>
+</html>

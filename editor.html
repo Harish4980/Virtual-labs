@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Virtual Labs — Editor</title>
+
+  <!-- CodeMirror -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/theme/material-darker.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/codemirror.min.js"></script>
+
+  <!-- Modes -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/mode/javascript/javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/mode/python/python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/mode/clike/clike.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/mode/php/php.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/mode/xml/xml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/mode/css/css.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/mode/htmlmixed/htmlmixed.min.js"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="stylesheet" href="editor.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo"><i class="fa-solid fa-flask"></i> Virtual Labs</div>
+    <div class="controls">
+      <select id="langSelect" aria-label="Language"></select>
+      <button id="filesBtn" class="btn" title="Files"><i class="fa-solid fa-folder"></i></button>
+      <button id="saveBtn" class="btn" title="Save"><i class="fa-solid fa-save"></i></button>
+      <button id="runBtn" class="btn primary" title="Run"><i class="fa-solid fa-play"></i></button>
+      <button id="themeBtn" class="btn" title="Theme"><i class="fa-solid fa-moon"></i></button>
+      <a href="labs.html" class="btn ghost" title="Back"><i class="fa-solid fa-arrow-left"></i></a>
+    </div>
+  </nav>
+
+  <main class="editor-main">
+    <section class="left">
+      <div id="editor" class="editor-box"></div>
+
+      <div class="io">
+        <label>Std Input (optional)</label>
+        <textarea id="stdin" placeholder="Input for program"></textarea>
+        <div class="io-actions">
+          <button id="clearOutput" class="btn">Clear Output</button>
+        </div>
+      </div>
+    </section>
+
+    <aside class="right">
+      <div class="meta">
+        <h3 id="langTitle">Language</h3>
+        <p id="langDesc">Description</p>
+        <img id="langImage" alt="" class="lang-img" />
+      </div>
+
+      <div class="panel files-panel hidden" id="filesPanel">
+        <h4>Saved files (<span id="savedCount">0</span>/5)</h4>
+        <ul id="filesList" class="file-list"></ul>
+      </div>
+
+      <div class="panel output-panel">
+        <div class="out-head">
+          <h4>Output</h4>
+          <button id="togglePreview" class="btn tiny">Preview</button>
+        </div>
+
+        <div id="outputConsole" class="output-console">
+          <pre id="outputBox" class="output-box">(no output)</pre>
+        </div>
+
+        <div id="outputPreview" class="output-preview hidden">
+          <iframe id="previewFrame" sandbox="allow-scripts" title="Preview"></iframe>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Save Modal -->
+  <div id="saveModal" class="modal hidden">
+    <div class="modal-card">
+      <h3>Save file</h3>
+      <input id="saveName" placeholder="file name (no extension)" />
+      <div class="modal-actions">
+        <button id="saveCancel" class="btn">Cancel</button>
+        <button id="saveConfirm" class="btn primary">Save</button>
+      </div>
+      <small class="muted">Max 5 files per language. Files stored locally.</small>
+    </div>
+  </div>
+
+  <script src="editor.js"></script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - Virtual Labs</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+    :root {
+        --bg-light: #f5f7fa;
+        --text-light: #333;
+        --bg-dark: #121212;
+        --text-dark: #fff;
+        --accent: #4dabf7;
+    }
+
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: var(--bg-light);
+        color: var(--text-light);
+        transition: background 0.5s, color 0.5s;
+    }
+
+    body.dark {
+        background: var(--bg-dark);
+        color: var(--text-dark);
+    }
+
+    /* Animated Background Shapes */
+    .background {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        z-index: -1;
+        overflow: hidden;
+    }
+
+    .shape {
+        position: absolute;
+        background: var(--accent);
+        border-radius: 50%;
+        opacity: 0.15;
+        animation: float 8s infinite ease-in-out;
+    }
+
+    .shape:nth-child(1) { width: 200px; height: 200px; top: 10%; left: 15%; animation-delay: 0s; }
+    .shape:nth-child(2) { width: 300px; height: 300px; top: 60%; left: 70%; animation-delay: 2s; }
+    .shape:nth-child(3) { width: 150px; height: 150px; top: 40%; left: 40%; animation-delay: 4s; }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0) translateX(0); }
+        50% { transform: translateY(-20px) translateX(10px); }
+    }
+
+    /* Navbar */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        background: rgba(0,0,0,0.05);
+        backdrop-filter: blur(8px);
+        position: sticky;
+        top: 0;
+    }
+
+    .navbar.dark {
+        background: rgba(255,255,255,0.05);
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        padding: 0;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: inherit;
+        transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: var(--accent);
+    }
+
+    .toggle-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.2rem;
+        color: inherit;
+    }
+
+    /* Contact Section */
+    .contact-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px;
+        gap: 50px;
+        flex-wrap: wrap;
+    }
+
+    .contact-img img {
+        width: 350px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        transition: transform 0.5s ease;
+    }
+
+    .contact-img img:hover {
+        transform: scale(1.05);
+    }
+
+    .contact-info {
+        background: rgba(255,255,255,0.1);
+        padding: 25px;
+        border-radius: 15px;
+        backdrop-filter: blur(12px);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        animation: slideIn 1s ease forwards;
+        max-width: 500px;
+    }
+
+    body.dark .contact-info {
+        background: rgba(0,0,0,0.2);
+    }
+
+    @keyframes slideIn {
+        from { transform: translateX(100px); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+    }
+
+    .contact-info p {
+        font-size: 1.1rem;
+        margin: 15px 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+.contact-img img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  transition: transform 0.5s ease;
+}
+
+    /* Footer */
+    .footer {
+        text-align: center;
+        padding: 15px;
+        background: rgba(0,0,0,0.05);
+        margin-top: 30px;
+    }
+
+    body.dark .footer {
+        background: rgba(255,255,255,0.05);
+    }
+</style>
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="logo"><i class="fa-solid fa-flask"></i> Virtual Labs</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="labs.html">Labs</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+            <li><button class="toggle-btn" id="themeToggle"><i class="fas fa-moon"></i></button></li>
+        </ul>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+  <div class="contact-img">
+    <img src="https://www.paruluniversity.ac.in/app/images/post/blog/featured_image/214523LlxXiXoC2GSbDJ8ey3pjaZKO6SEbyd6DZQ%20(1).jpg">
+  </div>
+  <div class="contact-info">
+    <h1>Contact Us</h1>
+    <p><i class="fas fa-university"></i> Parul University</p>
+    <p><i class="fas fa-map-marker-alt"></i> P.O.Limda, Ta. Waghodia, Dist. Vadodara, Gujarat – 391760, India</p>
+    <p><i class="fas fa-envelope"></i> info@paruluniversity.ac.in</p>
+    <p><i class="fas fa-phone"></i> +91 2668 260 300</p>
+  </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Virtual Labs | Made with <i class="fas fa-heart"></i> for learning</p>
+    </footer>
+
+    <script>
+        const toggleBtn = document.getElementById("themeToggle");
+        const body = document.body;
+        const navbar = document.getElementById("navbar");
+
+        toggleBtn.addEventListener("click", () => {
+            body.classList.toggle("dark");
+            navbar.classList.toggle("dark");
+            toggleBtn.innerHTML = body.classList.contains("dark") 
+                ? '<i class="fas fa-sun"></i>' 
+                : '<i class="fas fa-moon"></i>';
+        });
+    </script>
+</body>
+</html>

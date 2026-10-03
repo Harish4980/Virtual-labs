@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f9f9f9;
+    background-image:url(Visual-Programming-Lab-1024x768.jpg) ;
+    color: #000;
+}
+
+.navbar {
+    padding: 15px 30px;
+    background: #0d47a1;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    margin-left: 15px;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+}
+
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px);
+}
+
+.form-box {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.form-box h2 {
+    color: #0d47a1;
+    margin-bottom: 20px;
+}
+
+.form-box input, .form-box select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-box button {
+    width: 100%;
+    padding: 10px;
+    background: #0d47a1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-box button:hover {
+    background: #08306b;
+}
+
+.link-text {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.link-text a {
+    color: #0d47a1;
+    text-decoration: none;
+}
+
+.link-text a:hover {
+    text-decoration: underline;
+}
+
+.hidden {
+    display: none;
+}
+
+.site-footer {
+    background: #0d47a1;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+body.dark-mode .form-box {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+body.dark-mode input,
+body.dark-mode select {
+    background-color: #2a2a2a;
+    border: 1px solid #555;
+    color: #fff;
+}
+
+body.dark-mode button {
+    background-color: #2196f3;
+    color: white;
+}
+
+body.dark-mode .navbar {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode .site-footer {
+    background-color: #1e1e1e;
+}

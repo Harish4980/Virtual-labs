@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Labs</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo"><i class="fa-solid fa-flask"></i>Virtual Labs</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="labs.html">Labs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><button class="toggle-btn" id="themeToggle"><i class="fas fa-moon"></i></button></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Experience Labs Like Never Before</h1>
+        <p>Interactive. Engaging. Accessible from anywhere.</p>
+        <a href="signin.html" class="cta-btn">Get Started</a>
+    </header>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature-card">
+            <i class="fas fa-laptop-code fa-3x"></i>
+            <h3>Interactive Coding</h3>
+            <p>Run your code instantly and learn faster with real-time results.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-users fa-3x"></i>
+            <h3>Collaborative Learning</h3>
+            <p>Work together with peers on projects and share your code.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-cloud fa-3x"></i>
+            <h3>Cloud Access</h3>
+            <p>Access your labs from any device, anytime, anywhere.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Virtual Labs | Made with <i class="fas fa-heart"></i> for learning</p>
+    </footer>
+
+    <script>
+        const toggleBtn = document.getElementById("themeToggle");
+        toggleBtn.addEventListener("click", () => {
+            document.body.classList.toggle("dark");
+            toggleBtn.innerHTML = document.body.classList.contains("dark") 
+                ? '<i class="fas fa-sun"></i>' 
+                : '<i class="fas fa-moon"></i>';
+        });
+    </script>
+</body>
+</html>
